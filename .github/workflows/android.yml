@@ -28,8 +28,9 @@ jobs:
       - name: Flutter pub get
         run: flutter pub get
 
-      - name: Build debug APK
-        run: flutter build apk --debug
+      - name: Build debug APK (with stacktrace)
+  run: |
+    flutter build apk --debug --verbose
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
